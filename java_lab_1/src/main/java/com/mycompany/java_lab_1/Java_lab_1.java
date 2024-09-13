@@ -15,6 +15,7 @@ public class Java_lab_1 {
         System.out.println("Hello World!");
         // OOOOOOOOOOOOO
         // AAAAAAAAAAAAAAAAAAA
+        // BBBBBBBBBBB
     }
 }
 
