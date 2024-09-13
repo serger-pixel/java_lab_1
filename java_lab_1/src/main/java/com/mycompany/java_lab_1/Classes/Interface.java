@@ -1,13 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.java_lab_1.Classes;
+import java.util.Scanner;
 
-/**
- *
- * @author ermak
- */
 public class Interface {
-    public int
+    public void startApplication(){
+        Scanner sc = new Scanner(System.in);
+        String message = "Enter numbers divided by spaces and press ENTER to continue:";
+        System.out.println(message);
+        
+        Triangle triangle = new Trinagle(sc.nextLine());
+        
+    }
 }
