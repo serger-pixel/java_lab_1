@@ -9,5 +9,5 @@ package com.mycompany.java_lab_1.Classes;
  * @author ermak
  */
 public class Interface {
-    
+    public int
 }
