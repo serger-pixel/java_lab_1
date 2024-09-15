@@ -6,7 +6,7 @@ public class IntNum {
     
     IntNum(){
         _value = 0;
-        _positive = true;
+        _positive = false;
     }
     
     IntNum(int value){
@@ -18,9 +18,9 @@ public class IntNum {
         }
     }
     
-    static boolean isNum(String str){
+    static boolean isNum(String value){
        try {
-            Integer.parseInt(str);
+            Integer.parseInt(value);
         } catch (Exception e) {
             return false;
         }
@@ -45,8 +45,7 @@ public class IntNum {
     }
     
     static boolean checkNums(String values){
-        String[] inputNumbs = values.split(" ");
-        for(var num : inputNumbs){
+        for(var num : values.split(" ")){
             if(!isNum(num)){
                 return false;
             }
@@ -54,9 +53,9 @@ public class IntNum {
         return true;
     }
     
-    static IntNum getPositive(String[] strMas){
-        for(var el : strMas){
-            IntNum number = new IntNum(Integer.parseInt(el));
+    static IntNum getPositive(String values){
+        for(var num : values.split(" ")){
+            IntNum number = new IntNum(Integer.parseInt(num));
             if(number.getPositiveStatus()){
                 return number;
             }
