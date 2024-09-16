@@ -1,25 +1,32 @@
 package com.mycompany.java_lab_1.Classes;
 
-/**
- *
- * @author ermak
- */
 public class Triangle {
-    private IntNum _values [][];
-    private String _strTriangle;
-    static final int _defaultLen = 2;
-    static final int _unit = 1;
+    private IntNum _values [][]; // Массив строк треугольника
+    private String _strTriangle; // Представление треугольника в виде строки
+    static final int _defaultLen = 2; // Кол-во строк по умолчанию
+    static final int _unit = 1; // Опорная единица
     
-    
+    /**
+     * Конструктор с параметрами
+     * @param len - кол-во строк треугольника
+     */
     public Triangle(IntNum len){
         _strTriangle = "";
         _values = createMas(len);
     }
     
+    /**
+     * Конструктор по умолчанию
+     */
     public Triangle(){
         this(new IntNum(_defaultLen));
     }
     
+    /**
+     * Заполнение массива объектами IntNum
+     * @param len - кол-во строк треугольника
+     * @return массив массивов объектов IntNum
+     */
     private IntNum[][] createMas(IntNum len){
         IntNum [][]values = new IntNum[len.getValue()][];
         for (int n = 0; n < len.getValue(); n++)
@@ -40,10 +47,19 @@ public class Triangle {
         return values;
     }
     
+    /**
+     * Полуение представления треугольника в виде строки
+     * @return представление треугольника в виде строки
+     */
     public String getStrTriangle(){
         return _strTriangle;
     }
     
+    /**
+     * Переопределение треугольника
+     * @param len - кол-во строк треугольника
+     * @return true/false в зависимости от проверки статуса числа строк
+     */
     public boolean setTriangle(IntNum len){
         if (!len.getPositiveStatus()){
             return false;

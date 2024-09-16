@@ -1,20 +1,32 @@
 package com.mycompany.java_lab_1.Classes;
 
 public class IntNum {
-    private int _value;
-    private boolean _positive;
+    private int _value; // Значение числа
+    private boolean _positive; // Статус числа
     
-    IntNum(){
+    /**
+     * Конструктор по умолчанию
+     */
+    public IntNum(){
         _value = 0;
         _positive = false;
     }
     
-    IntNum(int value){
+    /**
+     * Конструктор с параметром
+     * @param value - значение числа
+     */
+    public IntNum(int value){
         _value = value;
         _positive = value > 0;
     }
     
-    static boolean isNum(String value){
+    /**
+     * Проверка на то, что символ является числом
+     * @param value - символ
+     * @return true/false в зависимости от результата проверки
+     */
+    public static boolean isNum(String value){
        try {
             Integer.parseInt(value);
         } catch (Exception e) {
@@ -23,15 +35,28 @@ public class IntNum {
         return true;
     }
     
-    int getValue(){
+    /**
+     * Получение значения числа
+     * @return значение числа
+     */
+    public int getValue(){
         return _value;
     }
     
-    boolean getPositiveStatus(){
+    /**
+     * Получение статуса числа
+     * @return статус числа
+     */
+    public boolean getPositiveStatus(){
         return _positive;
     }
     
-    boolean setValue(String value){
+    /**
+     * Установка значения числа
+     * @param value - символ
+     * @return true/false в зависимости от того, удалось ли установить значение
+     */
+    public boolean setValue(String value){
         if(isNum(value)){
             _value = Integer.parseInt(value);
             return true;
@@ -39,7 +64,12 @@ public class IntNum {
         return false;
     }
     
-    static boolean checkNums(String values){
+    /**
+     * Проверка строки на наличие символов, не являющихся числами
+     * @param values - строка
+     * @return true/false в зависимости от результата проверки
+     */
+    public static boolean checkNums(String values){
         for(var num : values.split(" ")){
             if(!isNum(num)){
                 return false;
@@ -48,7 +78,12 @@ public class IntNum {
         return true;
     }
     
-    static IntNum getPositive(String values){
+    /**
+     * Получение первого положительного числа из строки
+     * @param values - строка
+     * @return объект IntNum
+     */
+    public static IntNum getPositive(String values){
         for(var num : values.split(" ")){
             IntNum number = new IntNum(Integer.parseInt(num));
             if(number.getPositiveStatus()){
