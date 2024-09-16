@@ -11,11 +11,7 @@ public class IntNum {
     
     IntNum(int value){
         _value = value;
-        if(value > 0){
-            _positive = true;
-        } else {
-            _positive = false;
-        }
+        _positive = value > 0;
     }
     
     static boolean isNum(String value){
@@ -39,9 +35,8 @@ public class IntNum {
         if(isNum(value)){
             _value = Integer.parseInt(value);
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
     
     static boolean checkNums(String values){

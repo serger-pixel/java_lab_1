@@ -6,17 +6,18 @@ package com.mycompany.java_lab_1.Classes;
  */
 public class Triangle {
     private IntNum _values [][];
-    private String strTriangle = "";
-    static final int _default_len = 2;
+    private String _strTriangle;
+    static final int _defaultLen = 2;
     static final int _unit = 1;
     
     
     public Triangle(IntNum len){
+        _strTriangle = "";
         _values = createMas(len);
     }
     
     public Triangle(){
-        this(new IntNum(_default_len));
+        this(new IntNum(_defaultLen));
     }
     
     private IntNum[][] createMas(IntNum len){
@@ -24,7 +25,7 @@ public class Triangle {
         for (int n = 0; n < len.getValue(); n++)
         {
             int prev = _unit;
-            strTriangle += prev;
+            _strTriangle += prev;
             values[n] = new IntNum[n+1];
             values[n][0] = new IntNum(_unit);
             for (int k = 1; k <= n; k++)
@@ -32,15 +33,15 @@ public class Triangle {
                 prev *= (n - k + 1); 
                 prev /= k;
                 values[n][k] = new IntNum(prev);
-                strTriangle += prev;
+                _strTriangle += prev;
             }
-            strTriangle += '\n';
+            _strTriangle += '\n';
         }
         return values;
     }
     
     public String getStrTriangle(){
-        return strTriangle;
+        return _strTriangle;
     }
     
     public boolean setTriangle(IntNum len){
